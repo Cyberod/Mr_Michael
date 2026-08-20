@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GIZ Case Study | Michael Onyeka Ezeadichie</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-container": "#0d1c2e",
+                      "on-error-container": "#93000a",
+                      "on-tertiary-fixed-variant": "#3a485b",
+                      "background": "#f7f9fb",
+                      "on-primary-fixed-variant": "#3f465c",
+                      "on-tertiary-fixed": "#0d1c2e",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary-container": "#77859a",
+                      "on-primary-fixed": "#131b2e",
+                      "surface-container-highest": "#e0e3e5",
+                      "tertiary": "#000000",
+                      "surface-bright": "#f7f9fb",
+                      "surface-tint": "#565e74",
+                      "primary-fixed-dim": "#bec6e0",
+                      "inverse-surface": "#2d3133",
+                      "on-secondary-fixed-variant": "#763300",
+                      "on-secondary-fixed": "#331200",
+                      "surface": "#f7f9fb",
+                      "on-background": "#191c1e",
+                      "primary": "#000000",
+                      "surface-dim": "#d8dadc",
+                      "tertiary-fixed-dim": "#b9c7df",
+                      "on-surface": "#191c1e",
+                      "secondary-container": "#fd8a42",
+                      "inverse-primary": "#bec6e0",
+                      "error": "#ba1a1a",
+                      "surface-container": "#eceef0",
+                      "secondary-fixed-dim": "#ffb68e",
+                      "secondary-fixed": "#ffdbca",
+                      "on-error": "#ffffff",
+                      "on-secondary-container": "#682c00",
+                      "tertiary-fixed": "#d5e3fc",
+                      "surface-container-high": "#e6e8ea",
+                      "surface-container-low": "#f2f4f6",
+                      "outline-variant": "#c6c6cd",
+                      "on-primary": "#ffffff",
+                      "primary-container": "#131b2e",
+                      "surface-variant": "#e0e3e5",
+                      "primary-fixed": "#dae2fd",
+                      "inverse-on-surface": "#eff1f3",
+                      "outline": "#76777d",
+                      "on-primary-container": "#7c839b",
+                      "on-secondary": "#ffffff",
+                      "secondary": "#9b4500",
+                      "error-container": "#ffdad6",
+                      "on-surface-variant": "#45464d",
+                      "on-tertiary": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "section-padding-mobile": "64px",
+                      "section-padding-desktop": "120px",
+                      "gutter": "32px",
+                      "margin-mobile": "20px",
+                      "unit": "8px",
+                      "container-max": "1200px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "Playfair Display"
+                      ],
+                      "headline-sm": [
+                              "Playfair Display"
+                      ],
+                      "headline-md": [
+                              "Playfair Display"
+                      ],
+                      "headline-lg": [
+                              "Playfair Display"
+                      ],
+                      "caption": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Playfair Display"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-sm": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.7",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .ambient-shadow {
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.05);
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .bento-card {
+            background-color: var(--color-surface-container-lowest);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .bento-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(15, 23, 42, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="sticky top-0 z-50 bg-surface shadow-sm full-width">
+<div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-20">
+<a class="font-headline-sm text-headline-sm font-bold text-primary hover:scale-95 duration-200 ease-in-out block" href="#">
+                Michael Ezeadichie
+            </a>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-on-surface-variant pb-1 font-label-md text-label-md uppercase tracking-wider hover:text-primary transition-colors duration-300" href="#">Home</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-label-md text-label-md uppercase tracking-wider hover:text-primary transition-colors duration-300" href="#">Impact</a>
+<a class="text-on-surface-variant pb-1 font-label-md text-label-md uppercase tracking-wider hover:text-primary transition-colors duration-300" href="#">Services</a>
+<a class="text-on-surface-variant pb-1 font-label-md text-label-md uppercase tracking-wider hover:text-primary transition-colors duration-300" href="#">Speaking</a>
+<a class="text-on-surface-variant pb-1 font-label-md text-label-md uppercase tracking-wider hover:text-primary transition-colors duration-300" href="#">Thought Leadership</a>
+</div>
+<button class="hidden md:inline-flex bg-primary-container text-on-primary font-label-md text-label-md uppercase tracking-wider px-6 py-3 rounded hover:bg-tertiary-container transition-colors duration-300">
+                Get in Touch
+            </button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main class="w-full">
+<!-- Hero Section -->
+<section class="w-full px-margin-mobile md:px-gutter py-section-padding-mobile md:py-section-padding-desktop max-w-container-max mx-auto relative overflow-hidden flex flex-col md:flex-row items-center gap-12">
+<div class="w-full md:w-3/5 z-10">
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="bg-surface-variant text-on-surface-variant font-caption text-caption uppercase px-3 py-1 rounded-full">GIZ</span>
+<span class="bg-surface-variant text-on-surface-variant font-caption text-caption uppercase px-3 py-1 rounded-full">Digital Transformation</span>
+<span class="bg-surface-variant text-on-surface-variant font-caption text-caption uppercase px-3 py-1 rounded-full">2020</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-primary mb-6">Empowering SMEs Through Digital Transformation</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-2xl">
+                    How a Government Development Partnership Inspired the Creation of Haelsoft EdTech.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary-container text-on-primary font-label-md text-label-md px-8 py-4 rounded hover:bg-tertiary-container transition-colors inline-flex items-center justify-center">
+                        Read the Full Report
+                        <span class="material-symbols-outlined ml-2">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="w-full md:w-2/5 h-[400px] md:h-[600px] relative rounded-xl overflow-hidden ambient-shadow">
+<div class="absolute inset-0 bg-cover bg-center mix-blend-multiply opacity-90" data-alt="A professional, high-key photograph showing a diverse group of entrepreneurs engaging with digital tablets in a modern, well-lit workspace. The setting has a clean, corporate aesthetic with subtle navy and white tones. The atmosphere is collaborative and forward-thinking, emphasizing digital transformation and SME empowerment in a premium corporate style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCq_3FBjEIUAssu275ogjRTPe00Hm4iNaTPgwhN3ba_2SWTQ1lKR7Iluh8G9ItPgn6CTKVmLnAZwXa3c0lqPEjT5oRX0_gi7RLrEoHBr66HyYm7CuxBNV_cd5fsLpTdRRVVnTwGERuVt4xfSsDDziJgHFnh7v10OnWLVswSJB0cDUF-sbYdb4CmI3NK7UVwL8eDXphA78VBzMrliy7Ux_AfAs-IezYJlTaxeoI8XfGJiuKtj30AlIfF8rE1yov_MtuKrkLq6subgxMn')"></div>
+<div class="absolute inset-0 bg-primary opacity-10"></div>
+</div>
+</section>
+<!-- The Challenge & My Role -->
+<section class="w-full bg-surface-container-lowest py-section-padding-mobile md:py-section-padding-desktop">
+<div class="px-margin-mobile md:px-gutter max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary border-l-4 border-secondary-container pl-6 mb-6">The Challenge</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                        In 2020, African Small and Medium-sized Enterprises (SMEs) faced a significant digital gap. While global markets rapidly adopted digital tools for resilience and growth, many local businesses lacked the necessary infrastructure, skills, and strategic frameworks to compete effectively in the digital economy. GIZ recognized this critical barrier to sustainable economic development.
+                    </p>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-primary border-l-4 border-secondary-container pl-6 mb-6">My Role</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                        As the Founder and Principal Consultant at Haelsoft Digital, I led the strategic partnership with GIZ. My role involved assessing the specific digital needs of the target SMEs, designing a comprehensive capacity-building framework, and overseeing the execution of a scalable training program that directly addressed these skill deficits.
+                    </p>
+</div>
+</div>
+</section>
+<!-- The Vision That Changed Everything -->
+<section class="w-full px-margin-mobile md:px-gutter py-section-padding-mobile md:py-section-padding-desktop max-w-container-max mx-auto">
+<div class="bg-primary-container text-on-primary p-12 md:p-20 rounded-xl relative overflow-hidden">
+<div class="relative z-10 max-w-3xl">
+<span class="material-symbols-outlined text-4xl text-secondary-container mb-6 block">lightbulb</span>
+<h2 class="font-headline-lg text-headline-lg mb-6">The Vision That Changed Everything</h2>
+<p class="font-body-lg text-body-lg text-on-primary-container leading-relaxed mb-8">
+                        The GIZ project was a catalyst. While the immediate goal was capacity building, witnessing the profound impact of structured digital education sparked a larger vision. It revealed the urgent need for a dedicated, accessible platform tailored to the African context. This realization birthed Haelsoft EdTech and Marketplace—transitioning our focus from specialized consultancy to creating scalable educational infrastructure.
+                    </p>
+</div>
+<!-- Abstract geometric background graphic -->
+<div class="absolute right-0 bottom-0 opacity-10 w-96 h-96 bg-secondary-container rounded-full blur-3xl transform translate-x-1/3 translate-y-1/3 pointer-events-none"></div>
+</div>
+</section>
+<!-- Key Outcomes Bento Grid -->
+<section class="w-full bg-surface-container-lowest py-section-padding-mobile md:py-section-padding-desktop">
+<div class="px-margin-mobile md:px-gutter max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Key Outcomes</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Strategic deliverables that drove measurable change across the SME ecosystem.</p>
+</div>
+<div class="bento-grid">
+<div class="bento-card ambient-shadow bg-surface">
+<div class="w-12 h-12 bg-primary-container text-on-primary flex items-center justify-center rounded-lg mb-6">
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Digital Skills Uplift</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Equipped hundreds of SMEs with actionable digital marketing and operational strategies, directly improving their market reach.</p>
+</div>
+<div class="bento-card ambient-shadow bg-surface">
+<div class="w-12 h-12 bg-primary-container text-on-primary flex items-center justify-center rounded-lg mb-6">
+<span class="material-symbols-outlined">school</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Sustainable Learning</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Developed a reusable, localized curriculum that ensured continuous knowledge transfer beyond the initial project lifecycle.</p>
+</div>
+<div class="bento-card ambient-shadow bg-surface">
+<div class="w-12 h-12 bg-primary-container text-on-primary flex items-center justify-center rounded-lg mb-6">
+<span class="material-symbols-outlined">groups</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Entrepreneur Empowerment</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Fostered a community of tech-enabled business owners, increasing resilience against economic fluctuations.</p>
+</div>
+<div class="bento-card ambient-shadow bg-surface">
+<div class="w-12 h-12 bg-primary-container text-on-primary flex items-center justify-center rounded-lg mb-6">
+<span class="material-symbols-outlined">hub</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Innovation Ecosystem</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Laid the groundwork for a broader digital ecosystem, validating the market need for platforms like Haelsoft EdTech.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Reflection Quote -->
+<section class="w-full px-margin-mobile md:px-gutter py-section-padding-mobile md:py-section-padding-desktop max-w-container-max mx-auto text-center">
+<span class="material-symbols-outlined text-6xl text-surface-tint opacity-20 block mb-6">format_quote</span>
+<blockquote class="font-display-lg text-display-lg text-primary max-w-4xl mx-auto leading-tight mb-8">
+                "The GIZ project wasn't just about training; it was about revealing potential. It showed us that to truly transform an economy, you must build the systems that democratize knowledge."
+            </blockquote>
+<cite class="font-label-md text-label-md text-on-surface-variant not-italic uppercase tracking-widest block">
+                — Michael Onyeka Ezeadichie
+            </cite>
+</section>
+<!-- More Flagship Projects -->
+<section class="w-full bg-surface-container-high py-section-padding-mobile md:py-section-padding-desktop border-t border-outline-variant">
+<div class="px-margin-mobile md:px-gutter max-w-container-max mx-auto">
+<h3 class="font-headline-md text-headline-md text-primary mb-10 text-center">More Flagship Projects</h3>
+<div class="flex flex-wrap justify-center gap-4 md:gap-8">
+<!-- Client Chips -->
+<span class="bg-surface px-6 py-3 rounded-full font-label-md text-label-md text-on-surface border border-outline-variant hover:border-primary transition-colors cursor-pointer ambient-shadow">Google Nigeria</span>
+<span class="bg-surface px-6 py-3 rounded-full font-label-md text-label-md text-on-surface border border-outline-variant hover:border-primary transition-colors cursor-pointer ambient-shadow">Zenith Bank</span>
+<span class="bg-surface px-6 py-3 rounded-full font-label-md text-label-md text-on-surface border border-outline-variant hover:border-primary transition-colors cursor-pointer ambient-shadow">Polaris Bank</span>
+<span class="bg-surface px-6 py-3 rounded-full font-label-md text-label-md text-on-surface border border-outline-variant hover:border-primary transition-colors cursor-pointer ambient-shadow">Linda Ikeji Media</span>
+<span class="bg-surface px-6 py-3 rounded-full font-label-md text-label-md text-on-surface border border-outline-variant hover:border-primary transition-colors cursor-pointer ambient-shadow">Expervia Technologies</span>
+<span class="bg-surface px-6 py-3 rounded-full font-label-md text-label-md text-on-surface border border-outline-variant hover:border-primary transition-colors cursor-pointer ambient-shadow">Lagos Business School</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary-container text-on-primary-container full-width">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-gutter py-section-padding-mobile md:py-16 max-w-container-max mx-auto">
+<div class="mb-6 md:mb-0">
+<span class="font-headline-md text-headline-md italic text-on-primary-container">
+                    © 2024 Michael Onyeka Ezeadichie. Strategic Excellence.
+                </span>
+</div>
+<div class="flex space-x-6">
+<a class="font-body-md text-body-md text-on-primary-container opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-opacity duration-300" href="#">LinkedIn</a>
+<a class="font-body-md text-body-md text-on-primary-container opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-opacity duration-300" href="#">Twitter</a>
+<a class="font-body-md text-body-md text-on-primary-container opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-opacity duration-300" href="#">Medium</a>
+<a class="font-body-md text-body-md text-on-primary-container opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-opacity duration-300" href="#">Contact</a>
+</div>
+</div>
+</footer>
+</body></html>

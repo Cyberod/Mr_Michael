@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   Design tokens are defined in Phase 1.2 (see docs/SPEC.md §5).
+   This block holds only what the foundation needs to render correctly.
+   --------------------------------------------------------------------------- */
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-playfair), ui-serif, Georgia, serif;
+
+  --color-background: #f7f9fb;
+  --color-surface: #f7f9fb;
+  --color-on-surface: #191c1e;
+  --color-on-surface-variant: #45464d;
+  --color-primary: #000000;
+  --color-on-primary: #ffffff;
+  --color-outline-variant: #c6c6cd;
+}
+
+/* No dark mode: the Stitch build shipped unreachable `dark:` variants.
+   Decision recorded in docs/SPEC.md §1. */
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-on-surface);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Respect users who ask for less movement. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
