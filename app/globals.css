@@ -1,20 +1,113 @@
 @import "tailwindcss";
 
-/* ---------------------------------------------------------------------------
-   Design tokens are defined in Phase 1.2 (see docs/SPEC.md §5).
-   This block holds only what the foundation needs to render correctly.
-   --------------------------------------------------------------------------- */
+/* ============================================================================
+   DESIGN TOKENS — single source of truth (docs/SPEC.md §5)
+   Ported from the Stitch build via reference/tokens.json, then curated:
+   13 tokens were unused, and a further cluster (tertiary*, inverse*, *-fixed-dim)
+   duplicated the primary ramp or appeared only inside dead `dark:` variants.
+   Every pairing below is verified against WCAG AA — see /styleguide.
+   ========================================================================= */
 @theme {
+  /* --- Typefaces ------------------------------------------------------- */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-playfair), ui-serif, Georgia, serif;
 
+  /* --- Surfaces -------------------------------------------------------- */
   --color-background: #f7f9fb;
   --color-surface: #f7f9fb;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f2f4f6;
+  --color-surface-container: #eceef0;
+  --color-surface-container-high: #e6e8ea;
+  --color-surface-container-highest: #e0e3e5;
+  --color-surface-dim: #d8dadc;
+
+  /* --- Foreground ------------------------------------------------------ */
   --color-on-surface: #191c1e;
   --color-on-surface-variant: #45464d;
-  --color-primary: #000000;
+
+  /* --- Primary ----------------------------------------------------------
+     Brand navy, chosen over Stitch's pure black at Phase 1.2. Contrast is
+     equivalent (16.26:1 vs 16.23:1); navy simply sits better beside the
+     burnt-orange accent. It deliberately shares a value with
+     primary-container — the same navy serves as ink and as dark ground. */
+  --color-primary: #131b2e;
   --color-on-primary: #ffffff;
+  --color-primary-container: #131b2e;
+  --color-on-primary-container: #7c839b;
+
+  /* --- Secondary (accent) ---------------------------------------------- */
+  --color-secondary: #9b4500;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #fd8a42;
+  --color-secondary-fixed: #ffdbca;
+
+  /* --- Lines ----------------------------------------------------------- */
+  --color-outline: #76777d;
   --color-outline-variant: #c6c6cd;
+
+  /* --- Feedback (absent from Stitch; required by the contact form) ------ */
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-success: #146c2e;
+
+  /* --- Type scale ------------------------------------------------------ */
+  --text-display-lg: 64px;
+  --text-display-lg--line-height: 1.1;
+  --text-display-lg--font-weight: 700;
+  --text-display-lg--letter-spacing: -0.02em;
+
+  --text-headline-lg: 48px;
+  --text-headline-lg--line-height: 1.2;
+  --text-headline-lg--font-weight: 700;
+  --text-headline-lg--letter-spacing: -0.01em;
+
+  --text-headline-lg-mobile: 32px;
+  --text-headline-lg-mobile--line-height: 1.2;
+  --text-headline-lg-mobile--font-weight: 700;
+
+  --text-headline-md: 32px;
+  --text-headline-md--line-height: 1.3;
+  --text-headline-md--font-weight: 600;
+
+  --text-headline-sm: 24px;
+  --text-headline-sm--line-height: 1.4;
+  --text-headline-sm--font-weight: 600;
+
+  --text-body-lg: 18px;
+  --text-body-lg--line-height: 1.7;
+  --text-body-lg--font-weight: 400;
+
+  --text-body-md: 16px;
+  --text-body-md--line-height: 1.6;
+  --text-body-md--font-weight: 400;
+
+  --text-label-md: 14px;
+  --text-label-md--line-height: 1.2;
+  --text-label-md--font-weight: 600;
+  --text-label-md--letter-spacing: 0.05em;
+
+  --text-caption: 12px;
+  --text-caption--line-height: 1.4;
+  --text-caption--font-weight: 500;
+
+  /* --- Layout ---------------------------------------------------------- */
+  --container-page: 1200px;
+  --spacing-gutter: 32px;
+  --spacing-margin-mobile: 20px;
+  --spacing-section: 120px;
+  --spacing-section-mobile: 64px;
+
+  /* --- Radii ------------------------------------------------------------
+     Stitch redefined `full` as 0.75rem, which silently breaks `rounded-full`
+     for avatars and pills. The ramp is renamed here and `full` left at its
+     Tailwind default of 9999px. */
+  --radius-sm: 0.125rem;
+  --radius-md: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
 }
 
 /* No dark mode: the Stitch build shipped unreachable `dark:` variants.
@@ -22,6 +115,7 @@
 
 html {
   -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -32,14 +126,21 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Respect users who ask for less movement. */
+/* A single visible focus treatment for every interactive element. */
+:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
   *,
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
   }
 }

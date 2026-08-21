@@ -90,11 +90,20 @@ Extracted from the Stitch source and normalized. Full set: `reference/tokens.jso
 ### Core colors
 
 `background`/`surface` `#f7f9fb` · `on-surface` `#191c1e` · `on-surface-variant` `#45464d`
-`primary` `#000000` · `primary-container` `#131b2e` · `on-primary` `#ffffff`
+`primary` `#131b2e` · `primary-container` `#131b2e` · `on-primary` `#ffffff` · `on-primary-container` `#7c839b`
 `secondary` `#9b4500` · `secondary-container` `#fd8a42`
 `outline` `#76777d` · `outline-variant` `#c6c6cd` · `error` `#ba1a1a`
 
-> Thought Leadership's `primary: #0f172a` override is **discarded** — `#000000` is canonical.
+> Thought Leadership's `primary: #0f172a` override is **discarded**.
+> `primary` was changed from Stitch's `#000000` to brand navy `#131b2e` at Phase 1.2 —
+> contrast is equivalent (16.26:1 vs 16.23:1) and navy pairs better with the accent.
+
+### Feedback colors (added — Stitch had none usable)
+`error` `#ba1a1a` · `on-error` `#ffffff` · `error-container` `#ffdad6` · `success` `#146c2e`
+
+### Radii
+`rounded-full` is left at Tailwind's default. Stitch had redefined it to `0.75rem`,
+which silently breaks circular avatars and pills.
 
 ### Breakpoints
 
