@@ -1,3 +1,5 @@
+import type { Route } from "next";
+
 /**
  * Single source of truth for site-wide identity, navigation and contact data.
  * Every header, footer and metadata tag reads from here — which is what makes
@@ -14,9 +16,19 @@ export const siteConfig = {
   url: "https://michaelezeadichie.com",
   email: "onyekam.ezeadichie@gmail.com",
   phone: "+234 706 282 7560",
+  phoneHref: "tel:+2347062827560",
 } as const;
 
+/** Internal links. `Route` is validated against real routes at compile time,
+ *  so a typo or a link to a page we never built fails the build rather than
+ *  shipping as a dead link — defect #3 in docs/SPEC.md §9. */
 export type NavItem = {
+  label: string;
+  href: Route;
+};
+
+/** External links are plain strings — they are not app routes. */
+export type ExternalNavItem = {
   label: string;
   href: string;
 };
@@ -41,7 +53,7 @@ export const legalNav: NavItem[] = [
 ];
 
 // TODO: real URLs pending from the client (docs/SPEC.md §8).
-export const socialNav: NavItem[] = [
+export const socialNav: ExternalNavItem[] = [
   { label: "LinkedIn", href: "#" },
   { label: "X", href: "#" },
   { label: "Medium", href: "#" },
