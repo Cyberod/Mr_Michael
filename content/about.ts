@@ -7,8 +7,13 @@ export const aboutMeta: PageMeta = {
 };
 
 export const hero = {
-  eyebrow:
-    "Digital Transformation Executive | Chief Marketing Officer | Business and Technology Leader",
+  // An array rather than a pipe-separated string, so the separators are
+  // styling instead of characters a screen reader reads aloud.
+  roles: [
+    "Digital Transformation Executive",
+    "Chief Marketing Officer",
+    "Business and Technology Leader",
+  ],
   heading: "Building Businesses. Empowering People. Transforming Africa Through Technology.",
   description:
     "For over a decade, my career has been dedicated to bridging the gap between technology and business strategy. I believe technology creates unprecedented opportunities. Currently serving as the Chief Marketing Officer of Expervia Technologies (a premier Microsoft & Huawei partner) and leading Haelsoft Digital and Haelsoft EdTech, I am focused on fostering innovation, driving AI adoption, and executing data-driven solutions to build resilient enterprises across the continent.",
@@ -102,3 +107,15 @@ export const vision = {
   heading: "Thought Leadership & Vision",
   body: "I am deeply committed to Africa's economic growth. Through the strategic application of technology and artificial intelligence, my mission is to empower the next generation of tech talent, foster sustainable and resilient business models, and ultimately position the continent as a global leader in digital innovation and economic prosperity.",
 } satisfies { icon: FeatureCard["icon"]; heading: string; body: string };
+
+/**
+ * Newly written, not ported: the source About page simply stopped after the
+ * vision statement with no next step, while every other page ends with one.
+ * Flagged for client review in SPEC §8.
+ */
+export const closingCta = {
+  heading: "Let's Talk About Where You're Headed",
+  description:
+    "Whether it's a transformation programme, an AI roadmap or an executive session, the first step is a conversation.",
+  cta: { label: "Book a Consultation", href: "/contact" } satisfies Cta,
+};

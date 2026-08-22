@@ -7,6 +7,10 @@ import { cn } from "@/lib/utils";
  * level is a prop because a card's rank depends on the section it sits in — a
  * card under an `h2` is an `h3`. The Stitch pages hardcoded these and produced
  * a heading order that skipped levels.
+ *
+ * No `h-full` here: pass it at the usage site when the card is the only child
+ * of an equal-height grid cell. Baked in, it resolves against a stretched grid
+ * item's height and a card that follows a paragraph overflows its section.
  */
 export function FeatureCard({
   icon,
@@ -26,7 +30,7 @@ export function FeatureCard({
   return (
     <div
       className={cn(
-        "border-outline-variant/70 bg-surface-container-lowest flex h-full flex-col rounded-xl border p-8",
+        "border-outline-variant/70 bg-surface-container-lowest flex flex-col rounded-xl border p-8",
         className
       )}
     >

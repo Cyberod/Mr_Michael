@@ -142,16 +142,17 @@ Behaviour: client + server validation, honeypot + rate limiting, real loading/su
 
 ## 8. Open Items
 
-| Item                                  | Owner  | Blocks                                  |
-| ------------------------------------- | ------ | --------------------------------------- |
-| Social URLs (LinkedIn, X, Medium)     | Client | Phase 1.3 footer                        |
-| High-res photography (≥2000px)        | Client | Phase 2.2 — current asset is 512×512    |
-| Domain name                           | Client | Phase 6.2                               |
-| Privacy Policy + Terms copy           | Client | Phase 3.6                               |
-| Resend API key                        | Client | Phase 4.2                               |
-| Confirm title: CMO vs COO at Expervia | Client | Copy on `/speaking` — normalised to CMO |
+| Item                                     | Owner  | Blocks                                              |
+| ---------------------------------------- | ------ | --------------------------------------------------- |
+| Social URLs (LinkedIn, X, Medium)        | Client | Phase 1.3 footer                                    |
+| High-res photography (≥2000px)           | Client | Phase 2.2 — current asset is 512×512                |
+| Domain name                              | Client | Phase 6.2                                           |
+| Privacy Policy + Terms copy              | Client | Phase 3.6                                           |
+| Resend API key                           | Client | Phase 4.2                                           |
+| Confirm title: CMO vs COO at Expervia    | Client | Copy on `/speaking` — normalised to CMO             |
 | Real photography from the GIZ engagement | Client | `/impact/giz` hero — source image rejected, see §11 |
-| Newsletter provider (or drop it)      | Client | `/thought-leadership` signup section    |
+| Newsletter provider (or drop it)         | Client | `/thought-leadership` signup section                |
+| Approve newly written About closing CTA  | Client | `/about` — the source page ended with no next step  |
 
 ---
 
@@ -279,24 +280,24 @@ font and stays crisp at 16px. Next.js emits the `<link>` tags from the file conv
 
 Pages compose primitives; they do not re-declare layout or colour.
 
-| Component                     | Responsibility                                                     |
-| ----------------------------- | ------------------------------------------------------------------ |
-| `layout/Container`            | The one horizontal rhythm: 1200px max, 20px / 32px gutters          |
-| `layout/Section`              | The one vertical rhythm: 64px mobile / 120px desktop, plus tone     |
-| `layout/SectionHeading`       | Eyebrow + `h2` + description, with the id its section is labelled by |
-| `ui/Icon`                     | All 24 icons, inline SVG, exhaustive over `IconName`                |
-| `ui/Button` (`CtaLink`)       | CTA styling; `href` typed `Route`; min 48px tall                    |
-| `ui/Card` (`FeatureCard`)     | Icon + heading + prose; heading level is a prop                     |
+| Component                 | Responsibility                                                       |
+| ------------------------- | -------------------------------------------------------------------- |
+| `layout/Container`        | The one horizontal rhythm: 1200px max, 20px / 32px gutters           |
+| `layout/Section`          | The one vertical rhythm: 64px mobile / 120px desktop, plus tone      |
+| `layout/SectionHeading`   | Eyebrow + `h2` + description, with the id its section is labelled by |
+| `ui/Icon`                 | All 24 icons, inline SVG, exhaustive over `IconName`                 |
+| `ui/Button` (`CtaLink`)   | CTA styling; `href` typed `Route`; min 48px tall                     |
+| `ui/Card` (`FeatureCard`) | Icon + heading + prose; heading level is a prop                      |
 
 ### Section tones
 
 Sections declare a tone, not a colour, so alternating bands stay consistent across pages:
 
-| Tone      | Surface                    | Used for                          |
-| --------- | -------------------------- | --------------------------------- |
-| `default` | `surface` `#f7f9fb`        | Standard band                     |
-| `muted`   | `surface-container` `#eceef0` | Alternating band                |
-| `inverse` | `primary-container` `#131b2e` | Emphasis band (stats, quotes)  |
+| Tone      | Surface                       | Used for                      |
+| --------- | ----------------------------- | ----------------------------- |
+| `default` | `surface` `#f7f9fb`           | Standard band                 |
+| `muted`   | `surface-container` `#eceef0` | Alternating band              |
+| `inverse` | `primary-container` `#131b2e` | Emphasis band (stats, quotes) |
 
 `muted` is `surface-container` rather than `surface-container-low`: against `surface` the lighter
 step was too close to read as a band at all.
@@ -317,4 +318,3 @@ Above-the-fold images use `loading="eager"`, not `priority` — deprecated in Ne
 emits the head preload for eager images either way. `quality` values must be listed in
 `next.config.ts` `images.qualities`; the default allowlist is `[75]` and anything absent from it
 falls back silently.
-

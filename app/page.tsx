@@ -38,17 +38,12 @@ export default function HomePage() {
           <h1 className="font-display text-headline-lg-mobile md:text-headline-lg lg:text-display-lg mt-4">
             {hero.heading}
           </h1>
-          {/* Stacked on narrow screens: an interpunct separator at the end of
-              a wrapped line reads as a typo. Inline with separators once the
-              line is wide enough to hold more than one role. */}
-          <ul className="text-body-md text-on-surface-variant mt-6 flex flex-col sm:flex-row sm:flex-wrap">
+          {/* Separated by spacing, not by an interpunct: any glyph between
+              items dangles at the end of a wrapped line and reads as a typo,
+              and this list wraps at most widths. */}
+          <ul className="text-body-md text-on-surface-variant mt-6 flex flex-wrap gap-x-7 gap-y-1">
             {hero.roles.map((role) => (
-              <li
-                key={role}
-                className="sm:after:text-outline sm:after:mx-3 sm:after:content-['·'] sm:last:after:content-none"
-              >
-                {role}
-              </li>
+              <li key={role}>{role}</li>
             ))}
           </ul>
           <p className="text-body-lg text-on-surface-variant mt-6 max-w-xl">{hero.description}</p>
@@ -113,7 +108,7 @@ export default function HomePage() {
         <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {whatIDo.cards.map((card) => (
             <li key={card.title}>
-              <FeatureCard {...card} />
+              <FeatureCard {...card} className="h-full" />
             </li>
           ))}
         </ul>
@@ -174,7 +169,7 @@ export default function HomePage() {
         <ul className="mt-14 grid gap-6 md:grid-cols-2">
           {thoughtTeaser.cards.map((card) => (
             <li key={card.title}>
-              <FeatureCard title={card.title} description={card.description} />
+              <FeatureCard title={card.title} description={card.description} className="h-full" />
             </li>
           ))}
         </ul>
