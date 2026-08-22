@@ -124,7 +124,37 @@ titles are `as const`, giving the server action a literal union to validate agai
 Digital Transformation Consulting · AI Strategy & Adoption · Cloud & Microsoft Solutions Advisory ·
 Digital Marketing & Growth · Executive Training · Executive Speaking & Advisory
 
-Behaviour: client + server validation, honeypot + rate limiting, real loading/success/error states, accessible error messaging tied to inputs via `aria-describedby`.
+Behaviour, as built in Phase 3.5:
+
+- **Validation on both sides.** Native constraint attributes (`required`, `type="email"`, `maxlength`)
+  on the client; `lib/contact-form.ts` re-checks everything on the server, which is the side that
+  counts. A `service` value outside the allowlist is rejected — the select is rendered from that
+  same list, so anything else did not come from the form.
+- **Four real states**: idle, invalid, delivery error, success. All four verified by driving the
+  page in a headless browser, not by reading markup.
+- **Errors are tied to their inputs** by `aria-describedby` + `aria-invalid`, with a `role="alert"`
+  summary that receives focus so the outcome is announced rather than left for a keyboard user to
+  discover.
+- **Submitted values are echoed back** on failure. Nobody retypes a message because a field was wrong.
+- **Honeypot**: an off-screen field (not `display:none` — bots skip those), removed from the tab
+  order and hidden from assistive technology. A filled honeypot is reported as success, so a bot
+  learns nothing.
+- **Delivery** goes through Resend's REST API by `fetch` — no SDK dependency. Without
+  `RESEND_API_KEY` the form validates, then reports it could not send and offers the direct address.
+  It never silently discards a message, which is the failure mode of the original (SPEC §9 #5).
+
+Still open for Phase 4.2: rate limiting, and a verified sending domain for `CONTACT_FROM_EMAIL`
+(it currently falls back to Resend's shared onboarding sender, which is fine for testing only).
+
+### A React 19 form trap worth knowing
+
+React resets a form after its action completes, and it does so **after** the re-render. A controlled
+field is therefore cleared with nothing left to re-assert it. A dirty text input survives, because
+`defaultValue` only sets the value _attribute_; a `<select>` has no equivalent and loses its choice.
+
+The fix is to remount the fields on each result (`key` bumped per result object) so every field
+mounts with `defaultValue` already set to the echoed value — whenever the reset lands, it resets to
+exactly that. Confirmed by repeated runs; the controlled-select version was non-deterministic.
 
 ---
 
@@ -142,17 +172,18 @@ Behaviour: client + server validation, honeypot + rate limiting, real loading/su
 
 ## 8. Open Items
 
-| Item                                     | Owner  | Blocks                                              |
-| ---------------------------------------- | ------ | --------------------------------------------------- |
-| Social URLs (LinkedIn, X, Medium)        | Client | Phase 1.3 footer                                    |
-| High-res photography (≥2000px)           | Client | Phase 2.2 — current asset is 512×512                |
-| Domain name                              | Client | Phase 6.2                                           |
-| Privacy Policy + Terms copy              | Client | Phase 3.6                                           |
-| Resend API key                           | Client | Phase 4.2                                           |
-| Confirm title: CMO vs COO at Expervia    | Client | Copy on `/speaking` — normalised to CMO             |
-| Real photography from the GIZ engagement | Client | `/impact/giz` hero — source image rejected, see §11 |
-| Newsletter provider (or drop it)         | Client | `/thought-leadership` signup section                |
-| Approve newly written About closing CTA  | Client | `/about` — the source page ended with no next step  |
+| Item                                     | Owner  | Blocks                                               |
+| ---------------------------------------- | ------ | ---------------------------------------------------- |
+| Social URLs (LinkedIn, X, Medium)        | Client | Phase 1.3 footer                                     |
+| High-res photography (≥2000px)           | Client | Phase 2.2 — current asset is 512×512                 |
+| Domain name                              | Client | Phase 6.2                                            |
+| Privacy Policy + Terms copy              | Client | Phase 3.6                                            |
+| Resend API key                           | Client | Phase 4.2                                            |
+| Verified Resend sending domain           | Client | `CONTACT_FROM_EMAIL` — falls back to a shared sender |
+| Confirm title: CMO vs COO at Expervia    | Client | Copy on `/speaking` — normalised to CMO              |
+| Real photography from the GIZ engagement | Client | `/impact/giz` hero — source image rejected, see §11  |
+| Newsletter provider (or drop it)         | Client | `/thought-leadership` signup section                 |
+| Approve newly written About closing CTA  | Client | `/about` — the source page ended with no next step   |
 
 ---
 

@@ -41,13 +41,24 @@ export const form = {
     service: { label: "Service of Interest", required: false },
     message: { label: "Message / Project Details", required: true },
   },
-  /** Copy for every state the form can be in. Phase 4 wires these to the
-   *  server action; the source form had no states at all — it did nothing. */
+  /** Copy for every state the form can be in. The source form had no states
+   *  at all — no action, no handler, nothing happened on submit (SPEC §9 #5). */
   messages: {
     submitting: "Sending…",
+    successHeading: "Message sent",
     success: "Thank you — your message has been sent. I'll be in touch shortly.",
-    error: "Something went wrong sending your message. Please email me directly.",
+    sendAnother: "Send another message",
+    errorHeading: "Your message was not sent",
+    error: "Something went wrong sending your message.",
+    errorFallback: "Email me directly instead",
+    /** Shown when the mail provider is not configured. Distinct from a
+     *  delivery failure so the cause is not guessed from a generic message. */
+    unavailable: "The contact form is not connected to a mail provider yet.",
+    invalidHeading: "Please check the highlighted fields",
     required: "This field is required.",
     invalidEmail: "Please enter a valid email address.",
+    invalidService: "Please choose one of the listed services.",
+    tooLong: "This is longer than the form accepts.",
+    messageTooShort: "Please give me a little more detail — at least 20 characters.",
   },
 };
