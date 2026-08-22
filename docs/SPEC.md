@@ -272,3 +272,49 @@ navy, with the client / year / category metadata — which is also the only trea
 `app/icon.svg` and `app/apple-icon.png` — a navy monogram drawn as a stroked path, so it needs no
 font and stays crisp at 16px. Next.js emits the `<link>` tags from the file convention; no manual
 `<head>` markup.
+
+---
+
+## 12. Component Layer (Phase 3)
+
+Pages compose primitives; they do not re-declare layout or colour.
+
+| Component                     | Responsibility                                                     |
+| ----------------------------- | ------------------------------------------------------------------ |
+| `layout/Container`            | The one horizontal rhythm: 1200px max, 20px / 32px gutters          |
+| `layout/Section`              | The one vertical rhythm: 64px mobile / 120px desktop, plus tone     |
+| `layout/SectionHeading`       | Eyebrow + `h2` + description, with the id its section is labelled by |
+| `ui/Icon`                     | All 24 icons, inline SVG, exhaustive over `IconName`                |
+| `ui/Button` (`CtaLink`)       | CTA styling; `href` typed `Route`; min 48px tall                    |
+| `ui/Card` (`FeatureCard`)     | Icon + heading + prose; heading level is a prop                     |
+
+### Section tones
+
+Sections declare a tone, not a colour, so alternating bands stay consistent across pages:
+
+| Tone      | Surface                    | Used for                          |
+| --------- | -------------------------- | --------------------------------- |
+| `default` | `surface` `#f7f9fb`        | Standard band                     |
+| `muted`   | `surface-container` `#eceef0` | Alternating band                |
+| `inverse` | `primary-container` `#131b2e` | Emphasis band (stats, quotes)  |
+
+`muted` is `surface-container` rather than `surface-container-low`: against `surface` the lighter
+step was too close to read as a band at all.
+
+The closing CTA on every page is deliberately **not** `inverse` — the footer is already navy, and
+two navy bands in a row merge into one.
+
+### Heading rank
+
+`SectionHeading` always renders `h2`; `FeatureCard` takes its level as a prop and defaults to `h3`.
+Every `Section` points `aria-labelledby` at its heading, so the region list in a screen reader is
+navigable rather than a run of unnamed "section" entries. The Stitch pages hardcoded heading levels
+and skipped ranks (SPEC §9 #10).
+
+### Images
+
+Above-the-fold images use `loading="eager"`, not `priority` — deprecated in Next 16. next/image
+emits the head preload for eager images either way. `quality` values must be listed in
+`next.config.ts` `images.qualities`; the default allowlist is `[75]` and anything absent from it
+falls back silently.
+
