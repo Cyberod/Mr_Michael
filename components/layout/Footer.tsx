@@ -35,11 +35,7 @@ export function Footer() {
                 <li key={item.href}>
                   <NavLink
                     item={item}
-                    className={
-                      item.pending
-                        ? "text-body-md text-on-primary-container/60 block cursor-default"
-                        : "text-body-md hover:text-secondary-fixed transition-colors"
-                    }
+                    className="text-body-md hover:text-secondary-fixed transition-colors"
                   />
                 </li>
               ))}
@@ -99,11 +95,7 @@ export function Footer() {
                 <li key={item.href}>
                   <NavLink
                     item={item}
-                    className={
-                      item.pending
-                        ? "text-caption text-on-primary-container/60 block cursor-default"
-                        : "text-caption hover:text-secondary-fixed transition-colors"
-                    }
+                    className="text-caption hover:text-secondary-fixed transition-colors"
                   />
                 </li>
               ))}

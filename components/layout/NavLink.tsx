@@ -8,13 +8,12 @@ import type { NavItem } from "@/content/site";
  * placeholder. Those render as a plain <span> with no href at all, rather than
  * a link with a click handler that swallows the event: without an href the item
  * leaves the tab order, ignores middle-click and "open in new tab", and stops
- * advertising the route to crawlers. A screen-reader-only suffix explains why
- * the item is there but does nothing.
+ * advertising the route to crawlers.
  *
- * `className` arrives fully resolved from the caller — pending, active and
- * default are mutually exclusive strings rather than a base plus modifiers,
- * because two classes setting the same property leave the winner to CSS source
- * order (docs/SPEC.md §9, defect #4).
+ * Styling is identical either way — the caller passes one className and the
+ * item looks exactly like its neighbours. Only the click is gone. A
+ * screen-reader-only suffix carries the part sighted users infer from nothing
+ * happening.
  */
 export function NavLink({
   item,
