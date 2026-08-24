@@ -12,17 +12,21 @@ export default function NotFound() {
       <p className="text-body-lg text-on-surface-variant mt-4 max-w-2xl">
         The link may be out of date. Here is everything on the site:
       </p>
+      {/* Pending routes are omitted rather than dimmed: this list exists to get a
+          lost visitor somewhere useful, and a placeholder is not somewhere useful. */}
       <ul className="mt-8 flex flex-wrap gap-x-8 gap-y-4">
-        {mainNav.map((item) => (
-          <li key={item.href}>
-            <Link
-              href={item.href}
-              className="text-label-md text-secondary border-secondary border-b-2 pb-1"
-            >
-              {item.label}
-            </Link>
-          </li>
-        ))}
+        {mainNav
+          .filter((item) => !item.pending)
+          .map((item) => (
+            <li key={item.href}>
+              <Link
+                href={item.href}
+                className="text-label-md text-secondary border-secondary border-b-2 pb-1"
+              >
+                {item.label}
+              </Link>
+            </li>
+          ))}
       </ul>
     </Container>
   );

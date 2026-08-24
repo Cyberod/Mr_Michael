@@ -108,6 +108,10 @@ export const thoughtTeaser = {
     },
   ],
   cta: { label: "Read the Insights", href: "/thought-leadership" } satisfies Cta,
+  /** The destination is still a placeholder, so the section stands on its own
+   *  teasers rather than sending a visitor to an empty page. Flip to true when
+   *  /thought-leadership ships. */
+  ctaEnabled: false,
 };
 
 export const closingCta = {

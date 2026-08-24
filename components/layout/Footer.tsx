@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { legalNav, mainNav, siteConfig, socialNav } from "@/content/site";
 import { Container } from "./Container";
+import { NavLink } from "./NavLink";
 
 /**
  * One footer for every page. The Stitch build shipped four variants that
@@ -33,12 +33,14 @@ export function Footer() {
             <ul className="mt-4 space-y-3">
               {mainNav.map((item) => (
                 <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="text-body-md hover:text-secondary-fixed transition-colors"
-                  >
-                    {item.label}
-                  </Link>
+                  <NavLink
+                    item={item}
+                    className={
+                      item.pending
+                        ? "text-body-md text-on-primary-container/60 block cursor-default"
+                        : "text-body-md hover:text-secondary-fixed transition-colors"
+                    }
+                  />
                 </li>
               ))}
             </ul>
@@ -95,12 +97,14 @@ export function Footer() {
             <ul className="flex flex-wrap justify-center gap-6">
               {legalNav.map((item) => (
                 <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="text-caption hover:text-secondary-fixed transition-colors"
-                  >
-                    {item.label}
-                  </Link>
+                  <NavLink
+                    item={item}
+                    className={
+                      item.pending
+                        ? "text-caption text-on-primary-container/60 block cursor-default"
+                        : "text-caption hover:text-secondary-fixed transition-colors"
+                    }
+                  />
                 </li>
               ))}
             </ul>

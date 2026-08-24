@@ -5,6 +5,8 @@ import { thoughtMeta } from "@/content/thought-leadership";
 export const metadata: Metadata = {
   title: thoughtMeta.title,
   description: thoughtMeta.description,
+  // Unlinked while the page is a placeholder — keep it out of search results.
+  robots: { index: false, follow: false },
 };
 
 export default function ThoughtLeadershipPage() {

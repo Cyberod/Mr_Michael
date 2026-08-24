@@ -173,9 +173,11 @@ export default function HomePage() {
             </li>
           ))}
         </ul>
-        <CtaLink href={thoughtTeaser.cta.href} variant="outline" withArrow className="mt-12">
-          {thoughtTeaser.cta.label}
-        </CtaLink>
+        {thoughtTeaser.ctaEnabled && (
+          <CtaLink href={thoughtTeaser.cta.href} variant="outline" withArrow className="mt-12">
+            {thoughtTeaser.cta.label}
+          </CtaLink>
+        )}
       </Section>
 
       <Section tone="muted" labelledBy="closing-heading" containerClassName="text-center">

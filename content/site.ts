@@ -25,6 +25,10 @@ export const siteConfig = {
 export type NavItem = {
   label: string;
   href: Route;
+  /** The route exists and type-checks, but holds only a placeholder. Rendered
+   *  as inert text instead of a link so nothing in the chrome leads a visitor
+   *  to an empty page. Drop the flag when the real page ships. */
+  pending?: boolean;
 };
 
 /** External links are plain strings — they are not app routes. */
@@ -39,7 +43,7 @@ export const mainNav: NavItem[] = [
   { label: "Impact", href: "/impact" },
   { label: "Services", href: "/services" },
   { label: "Speaking", href: "/speaking" },
-  { label: "Thought Leadership", href: "/thought-leadership" },
+  { label: "Thought Leadership", href: "/thought-leadership", pending: true },
 ];
 
 export const primaryCta: NavItem = {
@@ -47,9 +51,10 @@ export const primaryCta: NavItem = {
   href: "/contact",
 };
 
+// Copy pending from the client (docs/SPEC.md §8); inert until it arrives.
 export const legalNav: NavItem[] = [
-  { label: "Privacy Policy", href: "/privacy" },
-  { label: "Terms of Service", href: "/terms" },
+  { label: "Privacy Policy", href: "/privacy", pending: true },
+  { label: "Terms of Service", href: "/terms", pending: true },
 ];
 
 // TODO: real URLs pending from the client (docs/SPEC.md §8).

@@ -4,8 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { mainNav, primaryCta, siteConfig } from "@/content/site";
-import { cn } from "@/lib/utils";
 import { Container } from "./Container";
+import { NavLink } from "./NavLink";
 
 const MOBILE_NAV_ID = "mobile-navigation";
 
@@ -96,19 +96,18 @@ export function Header() {
           {mainNav.map((item) => {
             const active = isActive(pathname, item.href);
             return (
-              <Link
+              <NavLink
                 key={item.href}
-                href={item.href}
-                aria-current={active ? "page" : undefined}
-                className={cn(
-                  "text-label-md border-b-2 pb-1 transition-colors",
-                  active
-                    ? "border-secondary text-secondary"
-                    : "text-on-surface-variant hover:text-primary border-transparent"
-                )}
-              >
-                {item.label}
-              </Link>
+                item={item}
+                active={active}
+                className={
+                  item.pending
+                    ? "text-label-md text-on-surface-variant/50 cursor-default border-b-2 border-transparent pb-1"
+                    : active
+                      ? "text-label-md border-secondary text-secondary border-b-2 pb-1 transition-colors"
+                      : "text-label-md text-on-surface-variant hover:text-primary border-b-2 border-transparent pb-1 transition-colors"
+                }
+              />
             );
           })}
         </nav>
@@ -169,17 +168,18 @@ export function Header() {
           {mainNav.map((item) => {
             const active = isActive(pathname, item.href);
             return (
-              <Link
+              <NavLink
                 key={item.href}
-                href={item.href}
-                aria-current={active ? "page" : undefined}
-                className={cn(
-                  "border-outline-variant/60 text-label-md border-b py-4 transition-colors",
-                  active ? "text-secondary" : "text-on-surface-variant hover:text-primary"
-                )}
-              >
-                {item.label}
-              </Link>
+                item={item}
+                active={active}
+                className={
+                  item.pending
+                    ? "border-outline-variant/60 text-label-md text-on-surface-variant/50 cursor-default border-b py-4"
+                    : active
+                      ? "border-outline-variant/60 text-label-md text-secondary border-b py-4 transition-colors"
+                      : "border-outline-variant/60 text-label-md text-on-surface-variant hover:text-primary border-b py-4 transition-colors"
+                }
+              />
             );
           })}
           <Link
