@@ -19,6 +19,16 @@ export const siteConfig = {
   phoneHref: "tel:+2347062827560",
 } as const;
 
+/**
+ * Google Analytics 4. The measurement ID is public by design — it ships in the
+ * page source of every GA install on the web, so there is nothing gained by
+ * hiding it in an environment variable, and plenty lost: a missing env var on
+ * Vercel would disable analytics silently.
+ */
+export const analytics = {
+  measurementId: "G-SDLX2TV25V",
+} as const;
+
 /** Internal links. `Route` is validated against real routes at compile time,
  *  so a typo or a link to a page we never built fails the build rather than
  *  shipping as a dead link — defect #3 in docs/SPEC.md §9. */
