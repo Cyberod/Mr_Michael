@@ -18,16 +18,14 @@ export const resourcesMeta: PageMeta = {
 };
 
 /**
- * The MBA ASAP referral destination.
+ * The MBA ASAP referral destination. The source page never carried one — all
+ * seven of its "Explore MBA ASAP" buttons pointed at `#explore`, a dead in-page
+ * anchor. Supplied by the client 2026-08-26.
  *
- * BLOCKED: the source page never carried one. All seven of its "Explore MBA
- * ASAP" buttons pointed at `#explore`, a dead in-page anchor. Until the real
- * referral URL is supplied every CTA on this page renders as inert text rather
- * than shipping a link that goes nowhere — see components/ui/ExternalCta.tsx.
- *
- * Filling this string in is the only change needed to activate the page.
+ * The `ref` parameter is what attributes a sale, so it must survive any edit to
+ * this string. ExternalCta adds rel="sponsored nofollow noopener noreferrer".
  */
-export const affiliateUrl = "";
+export const affiliateUrl = "https://www.mba-asap.com/?ref=MICHAELONYEKAEZEADICHIE";
 
 /** Repeated at each section break, as a landing page conventionally does. */
 export const ctaLabel = "Explore MBA ASAP";
