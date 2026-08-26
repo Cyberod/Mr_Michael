@@ -1,0 +1,537 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=ai-legible&utm_source=comment&utm_medium=referral&utm_id=65df9843-c658-44a0-8f80-07487bb4aaab
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
+<meta name="hosting-provider" content="Netlify">
+<meta name="netlify-deploy" content="https://netlify.new/?utm_campaign=ai-legible&amp;utm_source=meta&amp;utm_medium=referral&amp;utm_id=65df9843-c658-44a0-8f80-07487bb4aaab">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="Mini MBA &amp; Micro MBA Online: Learn the Business Skills That Matter. Practical Business Education Without the Commitment of a Traditional MBA." name="description">
+<title>Mini MBA &amp; Micro MBA Online: Learn the Business Skills That Matter | Michael Onyeka Ezeadichie</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6",
+                        "on-surface-variant": "#45464d",
+                        "on-tertiary": "#ffffff",
+                        "secondary": "#9b4500",
+                        "secondary-fixed-dim": "#ffb68e",
+                        "surface-container-low": "#f2f4f6",
+                        "on-primary-container": "#7c839b",
+                        "surface-bright": "#f7f9fb",
+                        "surface-dim": "#d8dadc",
+                        "tertiary-fixed": "#d5e3fc",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#e6e8ea",
+                        "background": "#f7f9fb",
+                        "on-primary-fixed": "#131b2e",
+                        "on-tertiary-fixed": "#0d1c2e",
+                        "primary-container": "#131b2e",
+                        "secondary-fixed": "#ffdbca",
+                        "surface": "#f7f9fb",
+                        "inverse-surface": "#2d3133",
+                        "on-secondary-fixed": "#331200",
+                        "tertiary-container": "#0d1c2e",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#682c00",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#dae2fd",
+                        "secondary-container": "#fd8a42",
+                        "on-background": "#191c1e",
+                        "tertiary": "#000000",
+                        "on-tertiary-fixed-variant": "#3a485b",
+                        "surface-variant": "#e0e3e5",
+                        "outline-variant": "#c6c6cd",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-secondary-fixed-variant": "#763300",
+                        "inverse-primary": "#bec6e0",
+                        "surface-container-highest": "#e0e3e5",
+                        "outline": "#76777d",
+                        "on-tertiary-container": "#77859a",
+                        "surface-container": "#eceef0",
+                        "surface-tint": "#565e74",
+                        "primary": "#000000",
+                        "tertiary-fixed-dim": "#b9c7df",
+                        "primary-fixed-dim": "#bec6e0",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#191c1e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "32px",
+                        "section-padding-mobile": "64px",
+                        "container-max": "1200px",
+                        "margin-mobile": "20px",
+                        "section-padding-desktop": "120px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "headline-sm": ["Playfair Display"],
+                        "caption": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "label-md": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Ambient shadows and smooth transitions */
+        .ambient-shadow {
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.05);
+        }
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 24px 48px rgba(15, 23, 42, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- Navigation (TopNavBar) -->
+<header class="bg-surface dark:bg-tertiary shadow-sm sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto h-20">
+<!-- Brand -->
+<a class="font-headline-sm text-headline-sm tracking-tight text-primary dark:text-on-primary-fixed no-underline" href="#">
+                Michael Onyeka Ezeadichie
+            </a>
+<!-- Links (Desktop) -->
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-md text-label-md hover:opacity-80 transition-opacity" href="#">Home</a>
+<a class="text-secondary dark:text-secondary-fixed border-b-2 border-secondary dark:border-secondary-fixed-dim pb-1 font-label-md text-label-md scale-95 duration-100" href="#">Impact</a>
+<a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-md text-label-md hover:opacity-80 transition-opacity" href="#">Services</a>
+<a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-md text-label-md hover:opacity-80 transition-opacity" href="#">Speaking</a>
+<a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-md text-label-md hover:opacity-80 transition-opacity" href="#">Thought Leadership</a>
+</nav>
+<!-- CTA -->
+<div class="hidden md:block">
+<a class="bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded-DEFAULT hover:opacity-90 transition-opacity" href="#">
+                    Book a Consultation
+                </a>
+</div>
+<!-- Mobile Menu Toggle -->
+<button aria-label="Open menu" class="md:hidden text-primary">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main>
+<!-- Hero Section -->
+<section class="py-section-padding-mobile md:py-section-padding-desktop px-margin-mobile md:px-gutter max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
+<div class="flex flex-col gap-6">
+<span class="text-secondary font-label-md text-label-md uppercase tracking-wider">Executive Recommendation</span>
+<h1 class="font-display-lg text-display-lg text-primary leading-tight">
+                        Mini MBA &amp; Micro MBA Online: Learn the Business Skills That Matter.
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                        Master the essential frameworks of finance, strategy, and marketing through the highly acclaimed MBA ASAP program. Designed for professionals who need actionable insights, not just theory.
+                    </p>
+<div class="pt-4 flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+<a class="bg-primary text-on-primary font-label-md text-label-md px-8 py-4 rounded-DEFAULT hover:bg-inverse-surface transition-colors inline-flex items-center gap-2" href="#explore">
+                            Explore MBA ASAP
+                            <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+<p class="font-caption text-caption text-outline max-w-[200px]">
+                            *This recommendation includes a referral link supporting Michael's thought leadership platform.
+                        </p>
+</div>
+</div>
+<div class="relative w-full h-[500px] rounded-xl overflow-hidden ambient-shadow">
+<img alt="Modern business education setup" class="absolute inset-0 w-full h-full object-cover" data-alt="A sophisticated, well-lit modern home office setup featuring a sleek laptop displaying financial charts and a notebook with business strategy sketches. Soft natural light streams in through a large window, creating a focused, high-contrast, professional atmosphere reflecting an executive 'light mode' aesthetic. Deep navy accents in the room decor tie into a premium brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1J6SedMZ-rTJgRv5g_UE5SZTU6jokXwPYaEY19BMKWzGHLxS_xrqhcs0lU9KyopFDSG7WtRfgr56UksA8TtthRLtw7VpHKf1tno4twz4PeVq_KkVjXyGMAEEhgNsLnEOMHOK8m1NvRPpfpG4ptnZnx7JBe0OpaYu4x2HajJYsIYnODJvmdvL3qRZlqx4mlzemhpY-Htq2IfxAZSHQzi4wfFNN8Yhiknw1BUaT9jSWy5OFYUElWqov6w">
+<div class="absolute inset-0 bg-primary/5 mix-blend-multiply"></div>
+</div>
+</div>
+</section>
+<!-- Full Narrative Section -->
+<section class="py-12 md:py-24 px-margin-mobile md:px-gutter max-w-[900px] mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-8 text-center">Why a Mini MBA?</h2>
+<div class="prose prose-lg prose-slate max-w-none font-body-lg text-on-surface-variant space-y-6">
+<p class="">In today's fast-paced business environment, traditional two-year MBA programs often don't make sense for driven entrepreneurs and busy professionals. They require significant time away from work, saddle you with debt, and often focus heavily on academic theory rather than practical application.</p>
+<p class="">That's where the Mini MBA or Micro MBA comes in. These intensive, condensed programs extract the core competencies taught in top business schools and deliver them in a format you can consume on your schedule.</p>
+<p class="">I highly recommend the <strong>MBA ASAP program</strong> because it strips away the fluff. It focuses purely on the mental models, frameworks, and hard skills that actually move the needle in business. Whether you are scaling a startup, managing a corporate team, or aiming for the C-suite, understanding the language of business is non-negotiable.</p>
+<div class="pt-8 flex justify-center"><a class="bg-primary text-on-primary font-label-md text-label-md px-10 py-4 rounded-DEFAULT hover:bg-inverse-surface transition-colors inline-flex items-center gap-2 uppercase tracking-wider" href="#explore">Explore MBA ASAP<span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span></a></div></div>
+</section><section class="py-12 md:py-24 px-margin-mobile md:px-gutter max-w-[900px] mx-auto">
+    <h2 class="font-headline-lg text-headline-lg text-primary mb-8 text-center">Why I'm Recommending MBA ASAP</h2>
+    <div class="prose prose-lg prose-slate max-w-none font-body-lg text-on-surface-variant space-y-6">
+        <p class="">I've always believed that business knowledge should be accessible to people who want to build better businesses, advance their careers or simply understand how businesses work.</p>
+        <p class="">That's what caught my attention about MBA ASAP.</p>
+        <p class="">Rather than requiring learners to commit to a traditional multi-year MBA programme, MBA ASAP focuses on the practical foundations of business through a structured online learning experience.</p>
+        <p class="">It covers important areas including:</p>
+        <ul class="space-y-2">
+            <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+                <span class="">Accounting and financial statements</span>
+            </li>
+            <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+                <span class="">Corporate finance</span>
+            </li>
+            <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+                <span class="">Marketing</span>
+            </li>
+            <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+                <span class="">Business strategy</span>
+            </li>
+            <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+                <span class="">Investing</span>
+            </li>
+            <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+                <span class="">Business decision-making</span>
+            </li>
+        </ul>
+        <p class="">The programme is designed for people who want to learn at their own pace and build a stronger understanding of how businesses operate.</p>
+        <div class="pt-8 flex justify-center">
+            <a class="bg-primary text-on-primary font-label-md text-label-md px-10 py-4 rounded-DEFAULT hover:bg-inverse-surface transition-colors inline-flex items-center gap-2 uppercase tracking-wider" href="#explore">
+                Explore MBA ASAP
+                <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+            </a>
+        </div>
+    </div>
+</section>
+<!-- Comparison Table Section -->
+<section class="py-12 md:py-24 bg-surface-container-low px-margin-mobile md:px-gutter">
+<div class="max-w-container-max mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-12 text-center">Traditional MBA vs MBA ASAP</h2>
+<div class="overflow-x-auto rounded-xl ambient-shadow bg-surface-container-lowest">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container border-b border-surface-variant">
+<th class="p-6 font-headline-sm text-primary w-1/3">Feature</th>
+<th class="p-6 font-headline-sm text-primary w-1/3 border-l border-surface-variant">Traditional MBA</th>
+<th class="p-6 font-headline-sm text-primary w-1/3 border-l border-surface-variant bg-primary-fixed/30">MBA ASAP</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-on-surface-variant">
+<tr class="border-b border-surface-variant hover:bg-surface-container-low transition-colors">
+<td class="p-6 font-semibold">Cost</td>
+<td class="p-6 border-l border-surface-variant">$60,000 - $120,000+</td>
+<td class="p-6 border-l border-surface-variant font-semibold text-secondary-container-high bg-primary-fixed/10">Under $100</td>
+</tr>
+<tr class="border-b border-surface-variant hover:bg-surface-container-low transition-colors">
+<td class="p-6 font-semibold">Time Commitment</td>
+<td class="p-6 border-l border-surface-variant">2 Years (Full-time)</td>
+<td class="p-6 border-l border-surface-variant font-semibold text-secondary-container-high bg-primary-fixed/10">~6 Hours (Self-paced)</td>
+</tr>
+<tr class="border-b border-surface-variant hover:bg-surface-container-low transition-colors">
+<td class="p-6 font-semibold">Focus</td>
+<td class="p-6 border-l border-surface-variant">Theory &amp; Networking</td>
+<td class="p-6 border-l border-surface-variant font-semibold text-secondary-container-high bg-primary-fixed/10">Actionable Skills &amp; Frameworks</td>
+</tr>
+<tr class="border-b border-surface-variant hover:bg-surface-container-low transition-colors">
+<td class="p-6 font-semibold">Accessibility</td>
+<td class="p-6 border-l border-surface-variant">GMAT, Applications, Relocation</td>
+<td class="p-6 border-l border-surface-variant font-semibold text-secondary-container-high bg-primary-fixed/10">Instant Online Access</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="pt-12 flex justify-center"><a class="bg-primary text-on-primary font-label-md text-label-md px-10 py-4 rounded-DEFAULT hover:bg-inverse-surface transition-colors inline-flex items-center gap-2 uppercase tracking-wider" href="#explore">Explore MBA ASAP<span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span></a></div></section>
+<!-- What You'll Learn Section -->
+<section class="py-12 md:py-24 px-margin-mobile md:px-gutter max-w-container-max mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-12 text-center">Core Competencies You Will Master</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl ambient-shadow hover-lift border border-surface-variant">
+<span class="material-symbols-outlined text-[40px] text-secondary mb-4" data-icon="account_balance">account_balance</span>
+<h3 class="font-headline-sm text-primary mb-3">Accounting</h3>
+<p class="font-body-md text-on-surface-variant">Learn to read and interpret balance sheets, income statements, and cash flow statements. Understand the language of business without getting bogged down in bookkeeping minutiae.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl ambient-shadow hover-lift border border-surface-variant">
+<span class="material-symbols-outlined text-[40px] text-secondary mb-4" data-icon="trending_up">trending_up</span>
+<h3 class="font-headline-sm text-primary mb-3">Finance</h3>
+<p class="font-body-md text-on-surface-variant">Master concepts like NPV (Net Present Value), ROI, and capital allocation. Make strategic decisions backed by solid financial reasoning.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl ambient-shadow hover-lift border border-surface-variant">
+<span class="material-symbols-outlined text-[40px] text-secondary mb-4" data-icon="campaign">campaign</span>
+<h3 class="font-headline-sm text-primary mb-3">Marketing</h3>
+<p class="font-body-md text-on-surface-variant">Understand the 4 Ps, positioning, market segmentation, and how to create genuine value propositions that resonate with your target audience.</p>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl ambient-shadow hover-lift border border-surface-variant">
+<span class="material-symbols-outlined text-[40px] text-secondary mb-4" data-icon="architecture">architecture</span>
+<h3 class="font-headline-sm text-primary mb-3">Strategy</h3>
+<p class="font-body-md text-on-surface-variant">Deploy frameworks like Porter's Five Forces and SWOT analysis to build sustainable competitive advantages in your industry.</p>
+</div>
+<!-- Card 5 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl ambient-shadow hover-lift border border-surface-variant">
+<span class="material-symbols-outlined text-[40px] text-secondary mb-4" data-icon="monetization_on">monetization_on</span>
+<h3 class="font-headline-sm text-primary mb-3">Investing</h3>
+<p class="font-body-md text-on-surface-variant">Grasp the fundamentals of corporate valuation, equity, and debt financing to better manage company resources and growth.</p>
+</div>
+<!-- Card 6 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl ambient-shadow hover-lift border border-surface-variant">
+<span class="material-symbols-outlined text-[40px] text-secondary mb-4" data-icon="psychology">psychology</span>
+<h3 class="font-headline-sm text-primary mb-3">Decision-Making</h3>
+<p class="font-body-md text-on-surface-variant">Learn quantitative and qualitative models to make better, faster, and more rational business decisions under uncertainty.</p>
+</div>
+</div>
+<div class="pt-12 flex justify-center"><a class="bg-primary text-on-primary font-label-md text-label-md px-10 py-4 rounded-DEFAULT hover:bg-inverse-surface transition-colors inline-flex items-center gap-2 uppercase tracking-wider" href="#explore">Explore MBA ASAP<span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span></a></div></section>
+<!-- Program Details & Who is it for -->
+<section class="py-12 md:py-24 bg-surface-container-low px-margin-mobile md:px-gutter">
+<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-8">Who Is This For?</h2>
+<ul class="space-y-4 font-body-lg text-on-surface-variant">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+<span class=""><strong>Entrepreneurs &amp; Founders:</strong> Need to manage finances and strategy without a specialized degree.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+<span class=""><strong>Business Owners:</strong> Want to scale their operations using proven corporate frameworks.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+<span class=""><strong>Professionals &amp; Managers:</strong> Looking to upskill, transition to management, or better understand company-wide objectives.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+<span class=""><strong>Creatives &amp; Freelancers:</strong> Want to treat their craft as a serious, profitable business.</span>
+</li>
+</ul>
+</div>
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-8">Program Details</h2>
+<div class="grid grid-cols-2 gap-6">
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-surface-variant">
+<div class="font-display-lg text-secondary mb-2">70+</div>
+<div class="font-label-md text-primary uppercase tracking-wide">Video Lessons</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-surface-variant">
+<div class="font-display-lg text-secondary mb-2">6+</div>
+<div class="font-label-md text-primary uppercase tracking-wide">Hours of Content</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-surface-variant">
+<div class="font-display-lg text-secondary mb-2"><span class="material-symbols-outlined text-[48px]">all_inclusive</span></div>
+<div class="font-label-md text-primary uppercase tracking-wide">Lifetime Access</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-surface-variant">
+<div class="font-display-lg text-secondary mb-2"><span class="material-symbols-outlined text-[48px]">workspace_premium</span></div>
+<div class="font-label-md text-primary uppercase tracking-wide">Certificate of Completion</div>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-12 flex justify-center"><a class="bg-primary text-on-primary font-label-md text-label-md px-10 py-4 rounded-DEFAULT hover:bg-inverse-surface transition-colors inline-flex items-center gap-2 uppercase tracking-wider" href="#explore">Explore MBA ASAP<span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span></a></div></section>
+<!-- FAQ Section -->
+<section class="py-12 md:py-24 px-margin-mobile md:px-gutter max-w-[800px] mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-12 text-center">Frequently Asked Questions</h2>
+<div class="space-y-4"><!-- FAQ 1 -->
+<div class="border border-surface-variant rounded-lg overflow-hidden bg-surface-container-lowest">
+<button aria-controls="faq-1" aria-expanded="false" class="faq-button w-full flex justify-between items-center p-6 text-left focus:outline-none hover:bg-surface-container-low transition-colors">
+<span class="font-headline-sm text-primary text-xl">Is MBA ASAP a real MBA degree?</span>
+<span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+</button>
+<div class="hidden p-6 pt-0 font-body-md text-on-surface-variant border-t border-surface-variant" id="faq-1">
+                No, MBA ASAP is a non-degree certificate program. It is designed for skill acquisition and practical business knowledge rather than academic credentials.
+            </div>
+</div>
+<!-- FAQ 2 -->
+<div class="border border-surface-variant rounded-lg overflow-hidden bg-surface-container-lowest">
+<button aria-controls="faq-2" aria-expanded="false" class="faq-button w-full flex justify-between items-center p-6 text-left focus:outline-none hover:bg-surface-container-low transition-colors">
+<span class="font-headline-sm text-primary text-xl">Is MBA ASAP an online Mini MBA?</span>
+<span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+</button>
+<div class="hidden p-6 pt-0 font-body-md text-on-surface-variant border-t border-surface-variant" id="faq-2">
+                Yes, MBA ASAP is a comprehensive online Mini MBA program that delivers the core competencies of a traditional MBA in a condensed, accessible format.
+            </div>
+</div>
+<!-- FAQ 3 -->
+<div class="border border-surface-variant rounded-lg overflow-hidden bg-surface-container-lowest">
+<button aria-controls="faq-3" aria-expanded="false" class="faq-button w-full flex justify-between items-center p-6 text-left focus:outline-none hover:bg-surface-container-low transition-colors">
+<span class="font-headline-sm text-primary text-xl">Is MBA ASAP worth it?</span>
+<span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+</button>
+<div class="hidden p-6 pt-0 font-body-md text-on-surface-variant border-t border-surface-variant" id="faq-3">
+                Absolutely. For a fraction of the cost of a traditional MBA, you gain actionable frameworks and business skills that can be immediately applied to your career or business.
+            </div>
+</div>
+<!-- FAQ 4 -->
+<div class="border border-surface-variant rounded-lg overflow-hidden bg-surface-container-lowest">
+<button aria-controls="faq-4" aria-expanded="false" class="faq-button w-full flex justify-between items-center p-6 text-left focus:outline-none hover:bg-surface-container-low transition-colors">
+<span class="font-headline-sm text-primary text-xl">Can I study MBA ASAP online?</span>
+<span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+</button>
+<div class="hidden p-6 pt-0 font-body-md text-on-surface-variant border-t border-surface-variant" id="faq-4">
+                Yes, the entire program is delivered online, allowing you to learn at your own pace from anywhere in the world.
+            </div>
+</div>
+<!-- FAQ 5 -->
+<div class="border border-surface-variant rounded-lg overflow-hidden bg-surface-container-lowest">
+<button aria-controls="faq-5" aria-expanded="false" class="faq-button w-full flex justify-between items-center p-6 text-left focus:outline-none hover:bg-surface-container-low transition-colors">
+<span class="font-headline-sm text-primary text-xl">How long does MBA ASAP take?</span>
+<span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+</button>
+<div class="hidden p-6 pt-0 font-body-md text-on-surface-variant border-t border-surface-variant" id="faq-5">
+                The core program consists of over 6 hours of high-impact video content. Most students complete the curriculum within a few days to a week, depending on their schedule.
+            </div>
+</div>
+<!-- FAQ 6 -->
+<div class="border border-surface-variant rounded-lg overflow-hidden bg-surface-container-lowest">
+<button aria-controls="faq-6" aria-expanded="false" class="faq-button w-full flex justify-between items-center p-6 text-left focus:outline-none hover:bg-surface-container-low transition-colors">
+<span class="font-headline-sm text-primary text-xl">Does MBA ASAP provide a certificate?</span>
+<span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+</button>
+<div class="hidden p-6 pt-0 font-body-md text-on-surface-variant border-t border-surface-variant" id="faq-6">
+                Yes, upon successful completion of the program, you will receive a certificate of completion to showcase your new business competencies.
+            </div>
+</div>
+<!-- FAQ 7 -->
+<div class="border border-surface-variant rounded-lg overflow-hidden bg-surface-container-lowest">
+<button aria-controls="faq-7" aria-expanded="false" class="faq-button w-full flex justify-between items-center p-6 text-left focus:outline-none hover:bg-surface-container-low transition-colors">
+<span class="font-headline-sm text-primary text-xl">Is MBA ASAP accredited?</span>
+<span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+</button>
+<div class="hidden p-6 pt-0 font-body-md text-on-surface-variant border-t border-surface-variant" id="faq-7">
+                MBA ASAP is a professional development program focused on practical skills. While it is highly respected by practitioners, it is not an accredited academic degree program.
+            </div>
+</div>
+<!-- FAQ 8 -->
+<div class="border border-surface-variant rounded-lg overflow-hidden bg-surface-container-lowest">
+<button aria-controls="faq-8" aria-expanded="false" class="faq-button w-full flex justify-between items-center p-6 text-left focus:outline-none hover:bg-surface-container-low transition-colors">
+<span class="font-headline-sm text-primary text-xl">Is there a free Mini MBA?</span>
+<span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+</button>
+<div class="hidden p-6 pt-0 font-body-md text-on-surface-variant border-t border-surface-variant" id="faq-8">
+                While some platforms offer free introductory business courses, MBA ASAP provides a structured, comprehensive curriculum for a very low cost (under $100) to ensure high-quality production and content.
+            </div>
+</div>
+<!-- FAQ 9 -->
+<div class="border border-surface-variant rounded-lg overflow-hidden bg-surface-container-lowest">
+<button aria-controls="faq-9" aria-expanded="false" class="faq-button w-full flex justify-between items-center p-6 text-left focus:outline-none hover:bg-surface-container-low transition-colors">
+<span class="font-headline-sm text-primary text-xl">Is MBA ASAP suitable for Nigerians?</span>
+<span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+</button>
+<div class="hidden p-6 pt-0 font-body-md text-on-surface-variant border-t border-surface-variant" id="faq-9">
+                Absolutely. The business principles taught—finance, strategy, marketing—are universal and highly applicable to building and scaling businesses in the Nigerian and broader African markets.
+            </div>
+</div></div>
+</section>
+<!-- Footer (Shared Component) -->
+<section class="bg-primary-container py-12 md:py-24 px-margin-mobile md:px-gutter">
+    <div class="max-w-[800px] mx-auto text-center flex flex-col items-center gap-8">
+        <h2 class="font-headline-lg text-headline-lg text-on-primary-container">Ready to Build Your Business Knowledge?</h2>
+        <p class="font-body-lg text-body-lg text-on-primary-container opacity-80">
+            You don't necessarily need to spend years in business school before you start learning how businesses work. Whether you're an entrepreneur, professional, manager, aspiring business owner or simply someone who wants to understand business better, the right learning programme can help you develop a stronger foundation. Explore MBA ASAP and see whether it fits your goals.
+        </p>
+        <a href="#explore" class="bg-surface text-primary font-label-md text-label-md px-10 py-4 rounded-DEFAULT hover:bg-surface-container-high transition-colors inline-flex items-center gap-2 uppercase tracking-wider">
+            Explore MBA ASAP
+            <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+        </a>
+    </div>
+</section><section class="py-12 md:py-24 bg-surface px-margin-mobile md:px-gutter">
+    <div class="max-w-[800px] mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="font-headline-lg text-headline-lg text-primary mb-4">Have Questions About the Program?</h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant opacity-80">
+                Reach out for a consultation to see if this or other business education paths are right for your career goals.
+            </p>
+        </div>
+        <div class="bg-surface-container-lowest p-8 md:p-12 rounded-xl ambient-shadow border border-surface-variant">
+            <form class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flex flex-col gap-2">
+                        <label for="full-name" class="font-label-md text-label-md text-primary">Full Name</label>
+                        <input type="text" id="full-name" name="full-name" placeholder="John Doe" class="w-full p-4 rounded-DEFAULT border border-surface-variant bg-surface focus:outline-none focus:border-primary transition-colors font-body-md">
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label for="email" class="font-label-md text-label-md text-primary">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com" class="w-full p-4 rounded-DEFAULT border border-surface-variant bg-surface focus:outline-none focus:border-primary transition-colors font-body-md">
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label for="phone" class="font-label-md text-label-md text-primary">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+234 ..." class="w-full p-4 rounded-DEFAULT border border-surface-variant bg-surface focus:outline-none focus:border-primary transition-colors font-body-md">
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label for="message" class="font-label-md text-label-md text-primary">How can I help you?</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Tell me about your goals..." class="w-full p-4 rounded-DEFAULT border border-surface-variant bg-surface focus:outline-none focus:border-primary transition-colors font-body-md"></textarea>
+                </div>
+                <div class="pt-4">
+                    <button type="submit" class="w-full bg-primary text-on-primary font-label-md text-label-md px-10 py-4 rounded-DEFAULT hover:bg-inverse-surface transition-colors uppercase tracking-wider">
+                        Send Message
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section><footer class="bg-primary-container dark:bg-tertiary-container mt-section-padding-desktop">
+<div class="flex flex-col items-center text-center w-full py-section-padding-mobile md:py-section-padding-desktop px-margin-mobile max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md text-on-primary-container dark:text-tertiary-fixed mb-8">
+                    Michael Onyeka Ezeadichie
+                </div>
+<nav class="flex flex-wrap justify-center gap-8 mb-12">
+<a class="text-on-primary-container opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-colors font-body-md text-body-md" href="#">LinkedIn</a>
+<a class="text-on-primary-container opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-colors font-body-md text-body-md" href="#">Twitter</a>
+<a class="text-on-primary-container opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-colors font-body-md text-body-md" href="#">Email</a>
+<a class="text-tertiary-fixed-dim underline font-body-md text-body-md" href="#">Privacy Policy</a>
+</nav>
+<p class="text-caption font-caption text-on-primary-container opacity-60">
+                    © 2024 Michael Onyeka Ezeadichie. All Rights Reserved.
+                </p>
+</div>
+</footer>
+</main>
+<script>
+        // Simple FAQ Accordion Logic
+        document.querySelectorAll('.faq-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const expanded = button.getAttribute('aria-expanded') === 'true' || false;
+                button.setAttribute('aria-expanded', !expanded);
+                
+                const content = document.getElementById(button.getAttribute('aria-controls'));
+                const icon = button.querySelector('.material-symbols-outlined');
+                
+                if (!expanded) {
+                    content.classList.remove('hidden');
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    content.classList.add('hidden');
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            });
+        });
+    </script>
+
+
+</body></html>

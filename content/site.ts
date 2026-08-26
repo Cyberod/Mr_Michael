@@ -43,7 +43,10 @@ export const mainNav: NavItem[] = [
   { label: "Impact", href: "/impact" },
   { label: "Services", href: "/services" },
   { label: "Speaking", href: "/speaking" },
-  { label: "Thought Leadership", href: "/thought-leadership", pending: true },
+  { label: "Resources", href: "/resources" },
+  // /thought-leadership is deliberately absent: the route and its placeholder
+  // stay so the work isn't lost, but nothing links to it until there is real
+  // writing to put behind it. See docs/SPEC.md §8.
 ];
 
 export const primaryCta: NavItem = {

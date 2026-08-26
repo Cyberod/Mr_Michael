@@ -172,18 +172,19 @@ exactly that. Confirmed by repeated runs; the controlled-select version was non-
 
 ## 8. Open Items
 
-| Item                                     | Owner  | Blocks                                               |
-| ---------------------------------------- | ------ | ---------------------------------------------------- |
-| Social URLs (LinkedIn, X, Medium)        | Client | Phase 1.3 footer                                     |
-| High-res photography (≥2000px)           | Client | Phase 2.2 — current asset is 512×512                 |
-| Domain name                              | Client | Phase 6.2                                            |
-| Privacy Policy + Terms copy              | Client | Phase 3.6                                            |
-| Resend API key                           | Client | Phase 4.2                                            |
-| Verified Resend sending domain           | Client | `CONTACT_FROM_EMAIL` — falls back to a shared sender |
-| Confirm title: CMO vs COO at Expervia    | Client | Copy on `/speaking` — normalised to CMO              |
-| Real photography from the GIZ engagement | Client | `/impact/giz` hero — source image rejected, see §11  |
-| Newsletter provider (or drop it)         | Client | `/thought-leadership` signup section                 |
-| Approve newly written About closing CTA  | Client | `/about` — the source page ended with no next step   |
+| Item                                     | Owner  | Blocks                                                |
+| ---------------------------------------- | ------ | ----------------------------------------------------- |
+| Social URLs (LinkedIn, X, Medium)        | Client | Phase 1.3 footer                                      |
+| High-res photography (≥2000px)           | Client | Phase 2.2 — current asset is 512×512                  |
+| Domain name                              | Client | Phase 6.2                                             |
+| Privacy Policy + Terms copy              | Client | Phase 3.6                                             |
+| Resend API key                           | Client | Phase 4.2                                             |
+| Verified Resend sending domain           | Client | `CONTACT_FROM_EMAIL` — falls back to a shared sender  |
+| Confirm title: CMO vs COO at Expervia    | Client | Copy on `/speaking` — normalised to CMO               |
+| Real photography from the GIZ engagement | Client | `/impact/giz` hero — source image rejected, see §11   |
+| Newsletter provider (or drop it)         | Client | `/thought-leadership` signup section                  |
+| Approve newly written About closing CTA  | Client | `/about` — the source page ended with no next step    |
+| **MBA ASAP referral URL**                | Client | `/resources` — every CTA is inert without it, see §13 |
 
 ---
 
@@ -349,3 +350,41 @@ Above-the-fold images use `loading="eager"`, not `priority` — deprecated in Ne
 emits the head preload for eager images either way. `quality` values must be listed in
 `next.config.ts` `images.qualities`; the default allowlist is `[75]` and anything absent from it
 falls back silently.
+
+---
+
+## 13. Resources / MBA ASAP (Phase 3.6)
+
+Ported from a separate Netlify deploy, archived at `reference/stitch/resources.html`.
+This is the only page carrying a commercial relationship, which changes three things.
+
+**Placement.** The source called itself nothing in particular and its own nav
+listed a "Thought Leadership" item. It lives at `/resources`, labelled
+"Resources", taking the nav slot Thought Leadership vacated. `/impact` was
+already taken by the GIZ case-study index.
+
+**Disclosure.** The source buried the affiliate notice as an asterisked footnote
+under the hero. Affiliate relationships carry disclosure obligations (FTC in the
+US, ASA in the UK) and burying the notice is the specific failure those rules
+target, so it is promoted to a bordered `<aside>` at reading size beside the
+first CTA. Outbound links carry `rel="sponsored nofollow noopener noreferrer"`
+via `components/ui/ExternalCta.tsx` — `sponsored` declares the paid
+relationship, `noopener` closes the reverse-tabnabbing hole `target="_blank"`
+otherwise opens.
+
+**The referral URL does not exist yet.** All seven of the source's "Explore MBA
+ASAP" buttons pointed at `#explore`, a dead in-page anchor — the destination was
+never set. `affiliateUrl` in `content/resources.ts` is an empty string, and
+`ExternalCta` renders inert text rather than a dead link while it stays empty.
+Filling that one constant activates all seven CTAs.
+
+**Other source deviations.**
+
+- The page repeated the site contact form. One form, one server action and one
+  inbox is the point of `/contact`, so this section is a CTA pointing there.
+- The FAQ accordion is native `<details>`/`<summary>`: keyboard operable and
+  correctly announced with no JavaScript.
+- The comparison table scrolls inside its own `overflow-x-auto` box so the page
+  body never scrolls horizontally.
+- Source footer said © 2024 and linked only a Privacy Policy; normalised to the
+  canonical Footer like every other page.
